@@ -33,8 +33,8 @@ namespace WebApp
                 "ConnectionStrings:ProductConnection"]);
                 opts.EnableSensitiveDataLogging(true);
             });
-
-          //  services.AddDbContext<DataContext>;
+            services.AddControllers();
+            //  services.AddDbContext<DataContext>;
         }
 
        
@@ -55,6 +55,10 @@ namespace WebApp
                 {
                     await context.Response.WriteAsync("Hello World!");
                 });
+
+                //endpoints.MapWebService();
+                endpoints.MapControllers();
+
             });
           
 

@@ -48,7 +48,7 @@ namespace WebApp
             //}
 
             app.UseRouting();
-
+            app.UseMiddleware<TestMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
@@ -58,7 +58,7 @@ namespace WebApp
             });
           
 
-            DataSeed.SeedDatabase(context);
+            SeedData.SeedDatabase(context);
 
         } 
         

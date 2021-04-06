@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebApp.Models
 {
-    public class DataSeed
+    public class SeedData
     {
 
         public static void SeedDatabase(DataContext context)

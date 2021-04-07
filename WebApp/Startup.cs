@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using WebApp.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp
 {
@@ -34,6 +35,9 @@ namespace WebApp
                 opts.EnableSensitiveDataLogging(true);
             });
             services.AddControllers();
+            services.Configure<JsonOptions>(opts => {
+                opts.JsonSerializerOptions.IgnoreNullValues = true;
+            });
             //  services.AddDbContext<DataContext>;
         }
 
